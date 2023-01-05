@@ -1,2 +1,2 @@
-Node.js CRUD Backend with JsonWebtoken authentication
+Node.js CRUD Backend with JsonWebtoken authentication.
 DB used: MongoDB
