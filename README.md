@@ -54,7 +54,7 @@ Send POST request to http://localhost:3500/register <br>Each new registered user
 - User: 2001
 
 ```
-Send JSON body
+JSON body
 {
   "user": "Michael"
   "password": "Scott"
@@ -91,7 +91,7 @@ crypto.randomBytes(20).toString('hex')
 Send POST request to http://localhost:3500/auth
 
 ```
-Send JSON body
+JSON body
 {
   "user": "Michael"
   "pwd" : "Scott"
@@ -176,7 +176,7 @@ Role allowed: Admin <br>
 - GET http://localhost:3500/users
 <br>
 ```
-Send JSON Body with id of MongoDB Object \_id
+JSON Body with id of MongoDB Object \_id
 {
   "id" : "6429b5ec04f116539828b27c"
 }
@@ -187,7 +187,7 @@ Send JSON Body with id of MongoDB Object \_id
 
 <br>
 ``` 
-Send JSON Body with id
+JSON Body with id
 {
   "id" : "6429b5ec04f116539828b27c"
 }
