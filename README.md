@@ -184,7 +184,6 @@ JSON Body with id of MongoDB Object \_id
 
 - DELETE http://localhost:3500/users
 
-<br>
 ``` 
 {
   "id" : "6429b5ec04f116539828b27c"
