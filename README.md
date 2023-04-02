@@ -175,7 +175,7 @@ Role allowed: Admin <br>
 
 - GET http://localhost:3500/users
 ```
-JSON Body with id of MongoDB Object \_id
+JSON Body with id of MongoDB Object _id
 {
   "id" : "6429b5ec04f116539828b27c"
 }
