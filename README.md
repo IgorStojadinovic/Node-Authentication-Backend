@@ -1,6 +1,8 @@
 # Node Authentication Backend
 
-This is a node backend with Authentication and CRUD functionality.<br>You can create,read,update,and delete employees
+[![My Skills](https://skills.thijs.gg/icons?i=nodejs,express,javascript,mongodb,&theme=dark)](https://skills.thijs.gg)
+
+This is a node.js backend with Authentication and CRUD functionality.<br>You can create,read,update,and delete employees
 
 ## Technologies
 
@@ -18,10 +20,9 @@ Project is created with:
 
 ## Setup
 
-To run this project, install it locally using npm or on github codespaces:
+To run this project, install it locally using npm or on GitHub Codespaces:
 
 ```
-Create a new codespace
 $ npm install
 $ npm start
 ```
@@ -44,7 +45,7 @@ You can test all routes with Postman.
 
 # /register
 
-Send POST request to http://localhost:3500/register <br>Each new registerd user will be asigned " User " role by default 2001
+Send POST request to http://localhost:3500/register <br>Each new registered user will be assigned " User " role by default 2001
 
 ### User roles are:
 
@@ -80,7 +81,7 @@ __v:0
 
 # /auth
 
-#### For auth you need to add few variables to .env file ACCESS_TOKEN_SECRET and REFRESH_TOKEN_SECRET
+#### For /auth you need to add few variables to .env file ACCESS_TOKEN_SECRET and REFRESH_TOKEN_SECRET
 
 #### To generate random strings for these variables use node.js command
 
@@ -99,19 +100,20 @@ Send POST request to http://localhost:3500/auth
 }
 ```
 
-This route will generate accessToken which is used as Bearer Token in Postman for /users and /employees routes<br>
+This route will generate accessToken which is used as Bearer Token in Postman for /users and /employees routes.<br>
 AccessToken lasts only 60 seconds. For production it's can be set to 5~15min<br>
 AuthController.js line 34
 
 # /refresh
 
 Generates a new AccessToken<br>
-Eveytime /auth was called it generates jwt cookie which is used in /refresh
+Every time /auth was called it generates jwt cookie which is used in /refresh<br>
+Send GET request to http://localhost:3500/refresh
 
 # /logout
 
 Send GET request to http://localhost:3500/logout <br>
-with generated accesToken from /auth as Bearer Token <br>
+With generated accesToken from /auth as Bearer Token <br>
 Response should be:
 
 ```
@@ -120,7 +122,10 @@ Status: 204 No Content
 
 # /employees
 
-For this route you need Admin role or Editor
+## This route has full CRUD functionality
+
+For this route you need Admin or Editor role <br>
+In this case Admin
 
 ```
 _id
@@ -128,18 +133,41 @@ _id
 username:"Michael"
 roles:
 Object:
-Admin:5150 or Editor: 1994
+Admin:5150
 password:"$2b$13$izRURPzuHer1eF2kFDetre8JGq2Kq7cAslPjgLC.m0szXoALnW0V2"
 __v:0
 ```
 
-This route has full CRUD funcionality
-Send POST request to http://localhost:3500/logout
+Routes :
+<br>
+Send GET request to get all employees http://localhost:3500/employees
+<br>
+Send POST request to add emplyee http://localhost:3500/employees
 
 ```
+JSON Body
 {
   "firstname": "Dwight "
   "lastname" : "Schrute"
+}
+```
+
+Send PUT request to update emplyee http://localhost:3500/employees
+
+```
+JSON Body with emplyee id
+{
+  "id": "6429b3315a9b336f073807ab"
+  "password": "new passowd"
+}
+```
+
+Send DELETE request to delete emplyee http://localhost:3500/employees
+
+```
+JSON Body with emplyee id
+{
+  "id": "6429b3315a9b336f073807ab"
 }
 ```
 
@@ -149,7 +177,6 @@ Role allowed: Admin <br>
 Routes :
 
 - GET http://localhost:3500/users
-- PUT http://localhost:3500/users
 
 * Send JSON Body with id of MongoDB Object \_id
 
