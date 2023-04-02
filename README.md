@@ -158,7 +158,7 @@ Send PUT request to update emplyee http://localhost:3500/employees
 JSON Body with emplyee id
 {
   "id": "6429b3315a9b336f073807ab"
-  "password": "new passowd"
+  "password": "new password"
 }
 ```
 
