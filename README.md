@@ -174,7 +174,6 @@ JSON Body with emplyee id
 Role allowed: Admin <br>
 
 - GET http://localhost:3500/users
-<br>
 ```
 JSON Body with id of MongoDB Object \_id
 {
