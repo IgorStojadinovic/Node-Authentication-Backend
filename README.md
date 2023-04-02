@@ -138,7 +138,7 @@ password:"$2b$13$izRURPzuHer1eF2kFDetre8JGq2Kq7cAslPjgLC.m0szXoALnW0V2"
 __v:0
 ```
 
-Routes :
+
 <br>
 Send GET request to get all employees http://localhost:3500/employees
 <br>
@@ -174,7 +174,6 @@ JSON Body with emplyee id
 # /users
 
 Role allowed: Admin <br>
-Routes :
 
 - GET http://localhost:3500/users
 
