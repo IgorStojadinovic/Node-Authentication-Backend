@@ -53,9 +53,8 @@ Send POST request to http://localhost:3500/register <br>Each new registered user
 - Editor: 1994
 - User: 2001
 
-### Send JSON body
-
 ```
+Send JSON body
 {
   "user": "Michael"
   "password": "Scott"
@@ -91,9 +90,8 @@ crypto.randomBytes(20).toString('hex')
 
 Send POST request to http://localhost:3500/auth
 
-### Send JSON body
-
 ```
+Send JSON body
 {
   "user": "Michael"
   "pwd" : "Scott"
@@ -176,10 +174,9 @@ JSON Body with emplyee id
 Role allowed: Admin <br>
 
 - GET http://localhost:3500/users
-
-* Send JSON Body with id of MongoDB Object \_id
-
+<br>
 ```
+Send JSON Body with id of MongoDB Object \_id
 {
   "id" : "6429b5ec04f116539828b27c"
 }
@@ -187,9 +184,10 @@ Role allowed: Admin <br>
 
 - DELETE http://localhost:3500/users
 
-* Send JSON Body with id
 
-```
+<br>
+``` 
+Send JSON Body with id
 {
   "id" : "6429b5ec04f116539828b27c"
 }
