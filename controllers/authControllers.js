@@ -10,9 +10,7 @@ const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
 
   if (!user | !pwd) {
-    return res
-      .status(400)
-      .json({ message: "Username and Password are required!" });
+    return res.status(400).json({ message: "User and pwd are required!" });
   }
 
   //Find the user that is sent in DB
@@ -33,7 +31,7 @@ const handleLogin = async (req, res) => {
       { UserInfo: { username: foundUser.username, roles: roles } },
       process.env.ACCESS_TOKEN_SECRET,
       //In production set like 5min ~15min
-      { expiresIn: "30s" }
+      { expiresIn: "60s" }
     );
 
     const refreshToken = jwt.sign(
@@ -46,7 +44,7 @@ const handleLogin = async (req, res) => {
     foundUser.refreshToken = refreshToken;
 
     const result = await foundUser.save();
-    //console.log(result);
+    console.log(result);
 
     // Send Access Token , do not save access token into localstorage. Just in memory, state etc...
     // Send it as cookie, but only as http which is not available to javascript
@@ -54,7 +52,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true,
       sameSite: "None",
       //If your testing Refresh cookie with Thunder Client just remove secure:true. It wont send the cooke if it's enabled.
-      //secure: true,
+      secure: true,
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.json({ accessToken });

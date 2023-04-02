@@ -23,7 +23,7 @@ const handleNewUser = async (req, res) => {
     //Create and store new user
     const newUser = await User.create({
       username: user,
-      //roles: { User: 2001 }, this is for json db only
+      roles: { User: 2001 }, //Default role
       password: hashedPwd,
     });
 
