@@ -1,6 +1,6 @@
 # Node Authentication Backend
 
-[![My Skills](https://skills.thijs.gg/icons?i=nodejs,express,javascript,mongodb,&theme=dark)](https://skills.thijs.gg)]
+[![My Skills](https://skills.thijs.gg/icons?i=nodejs,express,javascript,mongodb,&theme=dark)](https://skillicons.dev)
 
 This is a node.js backend with Authentication and CRUD functionality.<br>You can create,read,update,and delete employees
 
